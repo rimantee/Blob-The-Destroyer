@@ -1,2 +1,45 @@
 /Library/
 /Logs/
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+!/[Aa]ssets/**/*.meta
+
+# User-specific files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Unity3D generated file on crash reports
+sysinfo.txt
+
+# Rider
+.idea/
+*.sln.iml
+
+# VSCode
+.vscode/
+
+# Crashlytics
+crashlytics-build.properties
+
+# Input System auto-generated files
+GeneratedInputs/
+
+# Packages
+Packages/manifest.json
+Packages/packages-lock.json
