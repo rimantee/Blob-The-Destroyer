@@ -19,7 +19,7 @@ public class PlayerBlob : MonoBehaviour
     public float idleBobHeight = 0.1f;
     private Vector3 initialPosition;
 
-    void Awake()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         mainCam = Camera.main;
@@ -32,19 +32,19 @@ public class PlayerBlob : MonoBehaviour
         inputActions.Player.Point.canceled += ctx => screenPoint = Vector2.zero;
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
         inputActions.Enable();
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         inputActions.Disable();
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (isInMenu) return; // No eating in menu
+        if (isInMenu) return;
 
         if (other.CompareTag("Eatable"))
         {
@@ -58,7 +58,7 @@ public class PlayerBlob : MonoBehaviour
         }
     }
 
-    void Grow()
+    private void Grow()
     {
         blobSize += growthRate;
         transform.localScale = Vector3.one * blobSize;
@@ -67,7 +67,7 @@ public class PlayerBlob : MonoBehaviour
         transform.position = new Vector3(transform.position.x, halfHeight, transform.position.z);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (isInMenu)
         {
@@ -89,7 +89,7 @@ public class PlayerBlob : MonoBehaviour
         }
     }
 
-    void IdleWobble()
+    private void IdleWobble()
     {
         Vector3 pos = initialPosition;
         pos.y += Mathf.Sin(Time.time * idleBobSpeed) * idleBobHeight;
